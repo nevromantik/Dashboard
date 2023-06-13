@@ -1,0 +1,30 @@
+.loginLayout{
+    width: 100vw;
+    height: 100vh;
+    background-color: #bbc3cb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoContainer{
+    display: flex;
+    
+
+}
+
+.logoImage{
+    height: 35px;
+}
+.logoContainer p{
+    color:blueviolet;
+    font-size: 1.5rem;
+    position: relative;
+    bottom: 1.3rem;
+    left: 0.5rem;
+    font-weight: 500;
+}
+.logoContainer span{
+    color: black;
+    font-weight: 300;
+}
