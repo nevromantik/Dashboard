@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import style from "./logingallery.module.css";
 import uniqid from "uniqid";
+import {IoIosArrowBack} from 'react-icons/io';
+import { IoIosArrowForward } from "react-icons/io";
 function Gallery() {
   const [dataGallery, setDataGallery] = useState([
     {
@@ -57,13 +59,13 @@ function Gallery() {
             leftSlide();
           }}
           className={style.galleryBtn1}
-        ></button>
+        ><IoIosArrowBack style={{fontSize:'1.3rem', color: '#763d78'}}/></button>
         <div className={style.galleryTracker}>
           <div className={style.track}>
-          
+           
           </div>
           <div className={style.track}>
-         
+          
           </div>
           <div className={style.track}>
           
@@ -76,7 +78,7 @@ function Gallery() {
             rightSlide();
           }}
           className={style.galleryBtn2}
-        ></button>
+        ><IoIosArrowForward style={{fontSize:'1.3rem', color: '#763d78'}}/></button>
       </div>
     </div>
   );

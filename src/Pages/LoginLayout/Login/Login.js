@@ -1,7 +1,9 @@
 import React from "react";
 import style from "./login.module.css";
 import Logo from "../../../Components/Logo";
+import { useNavigate } from "react-router-dom";
 function Login() {
+  const navigate = useNavigate()
   return (
     <div className={style.loginContainer}>
       <header>
@@ -28,17 +30,23 @@ function Login() {
           </div>
           <div className={style.finalFormWrap}>
             <div className={style.rememberMeCheckbox}>
-              <input type="checkbox" id="myCheckbox" />
-              <label for="myCheckbox">Remember me</label>
+            <label class="container">
+                 Remember me
+                  <input type="checkbox"  />
+                  <span class="checkmark"></span>
+                </label>
             </div>
             <div className={style.logBtnWrap}>
-              <button>Log in</button>
+              <button  >Log in</button>
             </div>
           </div>
           <div className={style.signUpWrap}>
             <p>
               Don't have an account?{" "}
-              <span className={style.signUpSpan}>Sign up</span>
+              <span className={style.signUpSpan} onClick={() => {
+              
+                navigate('signup')
+              }}>Sign up</span>
             </p>
           </div>
         </form>
