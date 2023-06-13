@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import style from "./logingallery.module.css";
 import uniqid from "uniqid";
 import {IoIosArrowBack} from 'react-icons/io';
@@ -26,7 +26,8 @@ function Gallery() {
       p: " You can keep track of your favorite books.",
     },
   ]);
-
+ 
+  
   const [index, setIndex] = useState(0);
   const leftSlide = () => {
     setIndex((prev) => {
@@ -45,6 +46,14 @@ function Gallery() {
       setIndex(0);
     }
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % dataGallery.length);
+    }, 2000);
+  
+    return () => clearInterval(interval);
+  }, [index]);
   return (
     <div className={style.galleryWrap}>
       <div className={style.galleryData}>

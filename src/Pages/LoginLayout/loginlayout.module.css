@@ -5,6 +5,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    -webkit-box-shadow: 1px 17px 32px -12px #000000; 
+box-shadow: 1px 17px 32px -12px #000000;
+
 }
 
 .logoContainer{

@@ -37,7 +37,10 @@ function Login() {
                 </label>
             </div>
             <div className={style.logBtnWrap}>
-              <button  >Log in</button>
+              <button onClick={(e) => {
+                e.preventDefault();
+                navigate('dashboard')
+              }} >Log in</button>
             </div>
           </div>
           <div className={style.signUpWrap}>

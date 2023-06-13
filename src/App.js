@@ -4,6 +4,8 @@ import { useState, useEffect, useContext, createContext } from "react";
 import LoginLayout from "./Pages/LoginLayout/LoginLayout";
 import Login from "./Pages/LoginLayout/Login/Login";
 import SignUp from "./Pages/LoginLayout/SignUp/SignUp";
+import DashboardLayout from "./Pages/DashboardLayout/DashboardLayout";
+import WelcomeHome from "./Pages/DashboardLayout/WelcomeHome/WelcomeHome";
 export const AppContext = createContext(null);
 
 function App() {
@@ -12,9 +14,12 @@ function App() {
       <AppContext.Provider value={{}}>
         <BrowserRouter>
           <Routes>
-          <Route path="/" element={<LoginLayout />}>
+            <Route path="/" element={<LoginLayout />}>
               <Route index element={<Login />} />
-              <Route path="signup" element={<SignUp/>}/>
+              <Route path="signup" element={<SignUp />} />
+            </Route>
+            <Route path='dashboard' element={<DashboardLayout/>}>
+              <Route index element={<WelcomeHome/>}/>
             </Route>
           </Routes>
         </BrowserRouter>
