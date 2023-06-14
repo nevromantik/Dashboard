@@ -1,6 +1,6 @@
 .dashboardLayout{
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 3% 80%;
     grid-template-rows: 55px 93vh;
 }
 

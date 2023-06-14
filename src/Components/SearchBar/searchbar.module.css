@@ -1,0 +1,37 @@
+.searchBarWrap{
+    width: 121%;
+    height: 100%;
+    background-color: rgba(91, 19, 92, 0.808);
+   display: flex;
+   justify-content: space-between;
+   color: white;
+   align-items: center;
+}
+
+.inputWrap{
+    display: flex;
+    margin-left: 1rem;
+   
+}
+.inputWrap input{
+    background-color: transparent;
+    border: none;
+    margin-left: 1rem;
+    color: white
+}
+.inputWrap input::placeholder{
+    color: white
+}
+.iconsWrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.icon{
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    cursor:pointer
+}

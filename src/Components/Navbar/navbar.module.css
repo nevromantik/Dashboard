@@ -4,6 +4,7 @@
   display: grid;
   height: 100%;
   grid-template-rows: 10% 10% 10% 10% 60%;
+  width: 293px;
 
 }
 
@@ -11,12 +12,15 @@
 
 .navbarTaskContent {
   
-  height: 924px;
+  
+
   width: 75%;
   position: relative;
   bottom: 58rem;
   left: 4.7rem;
   background-color: white;
+  display: flex;
+  flex-direction: column;
 
 }
 
@@ -40,9 +44,7 @@
 }
 
 
-.navbarSecondBlock{
-    background-color: white;
-}
+
 
 
 .navbarFirstBlock, .navbarSecondBlock, .navbarThirdBlock, .navbarFourthBlock{
@@ -50,7 +52,11 @@
     justify-content: center;
     align-items: center;
 }
+.navbarFirstBlock:hover, .navbarSecondBlock:hover, .navbarThirdBlock:hover, .navbarFourthBlock:hover{
+    background-color: white;
+    transition: 0.3s;
 
+}
 .bookTrackIconWrap, .taskTrackIconWrap, .weatherTrackIconWrap, .settingsTrackIconWrap, .aiTrackIconWrap{
     height: 40px;
     width: 40px;
@@ -60,17 +66,18 @@
     align-items: center;
     background-color: white;
     font-weight: 700;
+    cursor: pointer;
 }
 .settingsTrackIconWrap{
     position: relative;
     top: 20rem;
-    left: 1rem
+    left: 0.6rem
 }
 
 .dateWrap{
     position: relative;
     top: 20rem;
-    left: 1rem;
+    left: 0.6rem;
     color: white
 }
 
@@ -88,4 +95,92 @@
 }
 .bookTrackIconWrap img{
     height: 2rem
+}
+
+
+
+
+.listContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7rem;
+    
+}
+.singleTaskContainer{
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.8rem; 
+    height: 5px;  
+    background-color: rgba(91, 19, 92, 0.329);
+ 
+}
+.checkbox{
+    width: 15px;
+    height: 15px;
+    border-radius: 50% 50%;
+    margin-right: 1rem;
+    background-color: white;
+}
+
+.checkbox:hover{
+    background-color: rgba(91,19,92,1);
+}
+.importantPContainer{
+    padding: 1rem;
+    height: 5px;
+    width: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: rgba(91, 19, 92, 0.068);
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    margin-left: 1rem;
+
+
+}
+
+.completedNum{
+    height: 20px;
+    width: 20px;
+    border-radius: 50% 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: 1rem;
+    background-color: white;
+    
+}
+.completedNumMedium{
+    height: 20px;
+    width: 20px;
+    border-radius: 50% 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: 1.3rem;
+    background-color: white;
+    
+}
+.completedNumLow{
+    height: 20px;
+    width: 20px;
+    border-radius: 50% 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: 2.2rem;
+    background-color: white;
+    
 }
