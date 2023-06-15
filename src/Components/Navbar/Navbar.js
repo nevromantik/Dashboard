@@ -8,8 +8,10 @@ import { CiSettings } from "react-icons/ci";
 import logo from "../../Assets/Logo/hexagon_abstract_modern_logo_preview_rev_1 (1).png";
 import { useContext, useEffect } from "react";
 import { AppContext } from "../../App";
+import { useNavigate } from "react-router-dom";
 import { BsCheck } from "react-icons/bs";
 function Navbar() {
+  const navigate = useNavigate()
   const [showNavContent, setShowNavContent] = useState(false);
   const { state, dispatch } = useContext(AppContext);
   const [highPriorityTask, setHighPriorityTask] = useState([]);
@@ -69,7 +71,9 @@ function Navbar() {
           className={style.navbarFirstBlock}
         >
           <div className={style.bookTrackIconWrap}>
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="logo" onClick={() => {
+              navigate('./')
+            }}  />
           </div>
         </div>
         <div
@@ -81,7 +85,9 @@ function Navbar() {
 
         >
           <div className={style.taskTrackIconWrap}>
-            <BsListTask style={{ fontSize: "1.5rem" }} />
+            <BsListTask style={{ fontSize: "1.5rem" }} onClick={() => {
+              navigate('tasks')
+            }} />
           </div>
         </div>
         <div

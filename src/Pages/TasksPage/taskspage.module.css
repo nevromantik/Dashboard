@@ -1,0 +1,33 @@
+.welcomeWrap{
+    background-color: rgba(91, 19, 92, 0.342);
+    height: 101%;
+    width: 121.2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+    border: none
+}
+.task{
+    padding: 1rem;
+    width: 80%;
+    cursor: pointer;
+    background-color: rgba(195, 86, 197, 0.068);
+    margin-bottom: 1rem;
+}
+
+.welcomeWrap div{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.arrowIcon{
+    cursor: pointer;
+    position: relative;
+    bottom: 20rem;
+    right: 1rem;
+}

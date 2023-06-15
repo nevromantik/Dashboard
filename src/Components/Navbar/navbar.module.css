@@ -53,8 +53,9 @@
     align-items: center;
 }
 .navbarFirstBlock:hover, .navbarSecondBlock:hover, .navbarThirdBlock:hover, .navbarFourthBlock:hover{
-    background-color: white;
+    background-color: rgba(91, 19, 92, 0.342);
     transition: 0.3s;
+    border: none
 
 }
 .bookTrackIconWrap, .taskTrackIconWrap, .weatherTrackIconWrap, .settingsTrackIconWrap, .aiTrackIconWrap{

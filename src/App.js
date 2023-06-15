@@ -6,6 +6,7 @@ import Login from "./Pages/LoginLayout/Login/Login";
 import SignUp from "./Pages/LoginLayout/SignUp/SignUp";
 import DashboardLayout from "./Pages/DashboardLayout/DashboardLayout";
 import WelcomeHome from "./Pages/DashboardLayout/WelcomeHome/WelcomeHome";
+import TasksPage from "./Pages/TasksPage/TasksPage";
 import {USERS, CURRENTUSER} from './Data/Data';
 export const AppContext = createContext(null);
 
@@ -29,12 +30,12 @@ function reducer(state, action){
 }
 function App() {
   const [users, setUsers] = useState(USERS); 
- 
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <div className="App">
-      <AppContext.Provider value={{users, setUsers, state, dispatch}}>
+      <AppContext.Provider value={{users, setUsers, state, dispatch, isModalOpen, setIsModalOpen}}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<LoginLayout />}>
@@ -43,6 +44,7 @@ function App() {
             </Route>
             <Route path='dashboard' element={<DashboardLayout/>}>
               <Route index element={<WelcomeHome/>}/>
+              <Route path='tasks' element={<TasksPage/>}/>
             </Route>
           </Routes>
         </BrowserRouter>
