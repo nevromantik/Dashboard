@@ -1,7 +1,8 @@
 .searchBarWrap{
     width: 121.2%;
     height: 100%;
-    background-color: #503050;
+    background-color: rgba(0, 0, 0, 0.123);
+
    display: flex;
    justify-content: space-between;
    color: white;
@@ -110,9 +111,11 @@ border-bottom-right-radius: 10px;
 .taskLogo{
     position: relative;
     right: 4rem;
-    background-color: #503050;
-    width: 110px;
+    background-color: transparent;
+    width: 62.9px;
     height: 3.4rem;
+    border: 0.5px solid rgb(194, 193, 193);
+    border-radius: 10px;
 }
 
 .taskInputWrap{

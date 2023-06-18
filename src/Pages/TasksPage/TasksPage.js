@@ -5,6 +5,7 @@ import { ReactSortable } from "react-sortablejs";
 import { AppContext } from "../../App";
 import { useEffect } from "react";
 import arrowDown from "../../Assets/Modal/icons8-down-button-48.png";
+import defaultBg from '../../Assets/bg/defaultbg.jpg'
 function TasksPage() {
   const {
     state,
@@ -17,6 +18,7 @@ function TasksPage() {
 
   const [tasks, setTasks] = useState(state[0]?.tasks);
   const [filteredTask, setFilteredTask] = useState([]);
+ 
   useEffect(() => {
     setTasks(state[0]?.tasks);
     const filtered = tasks?.filter((task) => {
@@ -25,7 +27,7 @@ function TasksPage() {
     setFilteredTask(filtered);
   }, [state, currentCatTitle, tasks]);
   return (
-    <div className={style.welcomeWrap}>
+    <div className={`${style.welcomeWrap} ${style.bg}` } >
       <div style={{ position: "absolute" }}>
         <ReactSortable list={filteredTask} setList={setFilteredTask}>
           {filteredTask?.length > 0

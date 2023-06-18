@@ -6,7 +6,7 @@ import { RiAddFill } from "react-icons/ri";
 import uniqid from "uniqid";
 import { TbMenu } from "react-icons/tb";
 import { BsFillHouseFill, BsBookFill, BsBookshelf } from "react-icons/bs";
-
+import {TiDelete} from 'react-icons/ti'
 function CategoryBar() {
   const {
     state,
@@ -73,9 +73,9 @@ function CategoryBar() {
             setCurrentCatTitle(cat?.categoryTitle)
           }}>
             <div className={style.catIcons}>
-              {cat?.categoryTitle === "study" ? <BsBookFill /> : null}
-              {cat?.categoryTitle === "work" ? <BsBookshelf /> : null}
-              {cat?.categoryTitle === "home" ? <BsFillHouseFill /> : null}
+              {cat?.categoryTitle === "study" ? <BsBookFill style={{fontSize:'1rem'}} /> : null}
+              {cat?.categoryTitle === "work" ? <BsBookshelf style={{fontSize:'1rem'}} /> : null}
+              {cat?.categoryTitle === "home" ? <BsFillHouseFill style={{fontSize:'1rem'}} /> : null}
               {cat?.categoryTitle !== "study" &&
               cat?.categoryTitle !== "work" &&
               cat?.categoryTitle !== "home" ? (
@@ -106,7 +106,7 @@ function CategoryBar() {
                   }}
 
                 >
-                  DEL
+                  <TiDelete style={{fontSize:'1.3rem'}}/>
                 </button>
               </div>
             </form>

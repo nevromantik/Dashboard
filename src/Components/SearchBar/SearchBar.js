@@ -23,7 +23,7 @@ function SearchBar({state}) {
     <>
     <div className={style.searchBarWrap}>
        <div className={style.taskLogo}>
-            
+            <img src={logo} alt='logo image'/>
           </div> 
           
         <div className={style.taskInputWrap}>

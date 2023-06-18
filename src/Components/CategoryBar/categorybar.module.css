@@ -1,12 +1,12 @@
 .categoryWrap{
-    width: 19rem;
+    width: 12rem;
     height: 94%;
     position: absolute;
     z-index: 1000;
-    background-color: #7b407b8e;
+    background-color: rgba(0, 0, 0, 0.123);
+
 }
 .category{
-    background-color: #7b407b8e;
     padding: 1rem;
     height: 20px;
     margin-bottom: 1rem;
@@ -21,32 +21,43 @@
 }
 
 .inputCategory input{
-    padding: 1rem;
+    padding: 0.5rem;
     background-color: transparent;
     border: none;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    position: relative;
+    right: 1rem;
+    width: 100%;
 }
 
 .inputCategory input::placeholder{
     color: black;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    position: relative;
+    top: 0.5rem
     
 }
-
+.inputCategory button{
+    background-color: transparent;
+    border: none;
+    position:relative;
+    left: 6rem
+}
 .addCategory{
   
     border: none;
+
     
 
 
 }
 .addCategory input{
-    padding: 1rem;
+   padding: 1rem;
     border: none;
-    font-size: 1rem;
+    font-size: 0.3rem;
     background-color: #503050;
     color: white;
-    width: 91%;
+    width: 106%;
 }
 .addCategory input::placeholder{
     color: white;
