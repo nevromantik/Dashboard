@@ -1,13 +1,71 @@
 .searchBarWrap{
-    width: 121%;
+    width: 121.2%;
     height: 100%;
-    background-color: rgba(91, 19, 92, 0.808);
+    background-color: #503050;
    display: flex;
    justify-content: space-between;
    color: white;
    align-items: center;
+   
 }
+.navbar{
+    
+    
+    width: 150px;  
+    padding: 1rem;  
+    position: relative;
+    left: 49.9rem;
+    bottom: 2.3rem;
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+    cursor: pointer;
+    background-color: rgba(91, 19, 92, 0.808);
+    -webkit-animation: scale-in-ver-top 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+animation: scale-in-ver-top 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
 
+}
+.navbar div{
+    transition: transform 0.2s ease;
+
+}
+.navbar div:hover{
+    transform: translateY(-10px);
+}
+@-webkit-keyframes scale-in-ver-top {
+    0% {
+      -webkit-transform: scaleY(0);
+              transform: scaleY(0);
+      -webkit-transform-origin: 100% 0%;
+              transform-origin: 100% 0%;
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+      -webkit-transform-origin: 100% 0%;
+              transform-origin: 100% 0%;
+      opacity: 1;
+    }
+  }
+  @keyframes scale-in-ver-top {
+    0% {
+      -webkit-transform: scaleY(0);
+              transform: scaleY(0);
+      -webkit-transform-origin: 100% 0%;
+              transform-origin: 100% 0%;
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+      -webkit-transform-origin: 100% 0%;
+              transform-origin: 100% 0%;
+      opacity: 1;
+    }
+  }
 .inputWrap{
     display: flex;
     margin-left: 1rem;
@@ -34,4 +92,41 @@
     display: flex;
     align-items: center;
     cursor:pointer
+}
+
+
+
+
+/* TASK PATHNAME SEARCHBAR STYLE*/
+
+.taskLogo img{
+    height: 2.5rem;
+    position: relative;
+    left: 1rem;
+    top: 0.2rem;
+
+}
+
+.taskLogo{
+    position: relative;
+    right: 4rem;
+    background-color: #503050;
+    width: 110px;
+    height: 3.4rem;
+}
+
+.taskInputWrap{
+    display: flex;
+    position: relative;
+    left: 45rem
+   
+}
+.taskInputWrap input{
+    background-color: transparent;
+    border: none;
+    margin-left: 1rem;
+    color: white
+}
+.taskInputWrap input::placeholder{
+    color: white
 }

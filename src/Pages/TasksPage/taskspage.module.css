@@ -1,12 +1,11 @@
 .welcomeWrap{
-    background-color: rgba(91, 19, 92, 0.342);
-    height: 101%;
+    background-color: rgb(247, 245, 241);
+    height: 101.2%;
     width: 121.2%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-   
     border: none
 }
 .task{

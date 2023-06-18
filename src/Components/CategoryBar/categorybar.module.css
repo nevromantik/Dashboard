@@ -1,0 +1,74 @@
+.categoryWrap{
+    width: 19rem;
+    height: 94%;
+    position: absolute;
+    z-index: 1000;
+    background-color: #7b407b8e;
+}
+.category{
+    background-color: #7b407b8e;
+    padding: 1rem;
+    height: 20px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.inputCategory{
+    margin-left: 2rem;
+}
+
+.inputCategory input{
+    padding: 1rem;
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+}
+
+.inputCategory input::placeholder{
+    color: black;
+    font-size: 1rem;
+    
+}
+
+.addCategory{
+  
+    border: none;
+    
+
+
+}
+.addCategory input{
+    padding: 1rem;
+    border: none;
+    font-size: 1rem;
+    background-color: #503050;
+    color: white;
+    width: 91%;
+}
+.addCategory input::placeholder{
+    color: white;
+    font-size: 1rem;
+    
+}
+.catIcons{
+    font-size: 1.3rem;
+}
+
+.addCategoryForm{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   position: absolute;
+   top: 51.5rem;
+   left: 1.8rem;
+    background-color: #503050;
+
+}
+
+.addCategoryForm button{
+    background-color: transparent;
+    border: none
+}

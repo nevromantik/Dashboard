@@ -5,11 +5,13 @@ export const USERS = [
     fullname: "Mario Rossi",
     email: "test@gmail.com",
     password: "test",
+    categories: [],
     tasks: [
       {
         id: uniqid(),
         title: "studiare matematica",
         category: "study",
+      
         priority: "high",
         completed: false,
         subtasks: [{ id: uniqid(), title: "es 1", completed: false }],
@@ -53,6 +55,8 @@ export const USERS = [
     fullname: "Jessica Moretti",
     email: "jessicamoretti@gmail.com",
     password: "jessica",
+    categories: [],
+
     tasks: [
       {
         id: uniqid(),
