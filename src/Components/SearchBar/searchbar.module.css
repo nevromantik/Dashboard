@@ -1,12 +1,15 @@
 .searchBarWrap{
     width: 121.2%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.123);
+    background-color: #692B75;
+    backdrop-filter: blur(5px);
 
    display: flex;
    justify-content: space-between;
    color: white;
    align-items: center;
+   -webkit-box-shadow: 10px -2px 32px 1px rgba(0,0,0,0.82); 
+box-shadow: 10px -2px 32px 1px rgba(0,0,0,0.82);
    
 }
 .navbar{
@@ -111,10 +114,10 @@ border-bottom-right-radius: 10px;
 .taskLogo{
     position: relative;
     right: 4rem;
-    background-color: transparent;
+    background-color: #692B75;
     width: 62.9px;
     height: 3.4rem;
-    border: 0.5px solid rgb(194, 193, 193);
+   
     border-radius: 10px;
 }
 

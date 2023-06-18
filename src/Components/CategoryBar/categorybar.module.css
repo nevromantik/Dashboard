@@ -3,7 +3,9 @@
     height: 94%;
     position: absolute;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.123);
+    background-color: #692b7569;
+   color: white;
+backdrop-filter: blur(5px);
 
 }
 .category{
@@ -28,10 +30,12 @@
     position: relative;
     right: 1rem;
     width: 100%;
+    color: white;
+
 }
 
 .inputCategory input::placeholder{
-    color: black;
+    color: white;
     font-size: 0.9rem;
     position: relative;
     top: 0.5rem

@@ -1,8 +1,9 @@
 .welcomeWrap{
-    height: 101.2%;
+    height: 82.2%;
     width: 121.2%;
     display: flex;
     align-items: center;
+     justify-content: center;
     flex-direction: column;
     border: none;
 }
@@ -18,9 +19,13 @@ body{
     padding: 1rem;
     width: 100%;
     cursor: pointer;
-    background-color: rgba(195, 86, 197, 0.226);
+    background-color:     #692b7569;
+
     backdrop-filter: blur(5px);
     border-radius: 10px;
+    color: white;
+
+   
 
 }
 
@@ -39,3 +44,21 @@ body{
     bottom: 20rem;
     right: 1rem;
 }
+
+
+.category{
+    z-index: 1000;
+    background-color:     #692b7569;
+    ;
+    height: 5rem;
+    border-radius: 20px;
+    width: 261px;
+    position: relative;
+    left: 25rem;
+    top: 5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+ 
+}
+

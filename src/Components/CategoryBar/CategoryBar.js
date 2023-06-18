@@ -6,7 +6,9 @@ import { RiAddFill } from "react-icons/ri";
 import uniqid from "uniqid";
 import { TbMenu } from "react-icons/tb";
 import { BsFillHouseFill, BsBookFill, BsBookshelf } from "react-icons/bs";
-import {TiDelete} from 'react-icons/ti'
+import {TiDelete} from 'react-icons/ti';
+import workIcon from '../../Assets/category/icons8-work-64.png';
+import studyIcon from '../../Assets/category/icons8-knowledge-sharing-50.png'
 function CategoryBar() {
   const {
     state,
@@ -73,13 +75,13 @@ function CategoryBar() {
             setCurrentCatTitle(cat?.categoryTitle)
           }}>
             <div className={style.catIcons}>
-              {cat?.categoryTitle === "study" ? <BsBookFill style={{fontSize:'1rem'}} /> : null}
-              {cat?.categoryTitle === "work" ? <BsBookshelf style={{fontSize:'1rem'}} /> : null}
-              {cat?.categoryTitle === "home" ? <BsFillHouseFill style={{fontSize:'1rem'}} /> : null}
+              {cat?.categoryTitle === "study" ? <img src={studyIcon} alt='hands'/> : null}
+              {cat?.categoryTitle === "work" ? <img src={workIcon} alt='hands'/> : null}
+              {cat?.categoryTitle === "home" ? <BsFillHouseFill  style={{fontSize:'3rem'}} /> : null}
               {cat?.categoryTitle !== "study" &&
               cat?.categoryTitle !== "work" &&
               cat?.categoryTitle !== "home" ? (
-                <TbMenu />
+                <TbMenu style={{fontSize:'3rem'}} />
               ) : null}
             </div>
             <form
@@ -106,7 +108,7 @@ function CategoryBar() {
                   }}
 
                 >
-                  <TiDelete style={{fontSize:'1.3rem'}}/>
+                  <TiDelete style={{color: 'purple', fontSize:'2rem'}}/>
                 </button>
               </div>
             </form>
