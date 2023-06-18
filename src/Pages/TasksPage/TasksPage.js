@@ -35,7 +35,7 @@ function TasksPage() {
       </div>
       <div className={`${style.welcomeWrap} ${style.bg}` } >
       
-      <div style={{ position: "absolute" }}>
+      <div className={style.tasksblock}>
         <ReactSortable list={filteredTask} setList={setFilteredTask}>
           {filteredTask?.length > 0
             ? filteredTask?.map((item) => (

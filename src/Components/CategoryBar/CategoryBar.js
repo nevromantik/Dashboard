@@ -6,9 +6,9 @@ import { RiAddFill } from "react-icons/ri";
 import uniqid from "uniqid";
 import { TbMenu } from "react-icons/tb";
 import { BsFillHouseFill, BsBookFill, BsBookshelf } from "react-icons/bs";
-import {TiDelete} from 'react-icons/ti';
-import workIcon from '../../Assets/category/icons8-work-64.png';
-import studyIcon from '../../Assets/category/icons8-knowledge-sharing-50.png'
+import { TiDelete } from "react-icons/ti";
+import workIcon from "../../Assets/category/icons8-work-64.png";
+import studyIcon from "../../Assets/category/icons8-knowledge-sharing-50.png";
 function CategoryBar() {
   const {
     state,
@@ -17,15 +17,10 @@ function CategoryBar() {
     setCategory,
     currentCatTitle,
     setCurrentCatTitle,
-
   } = useContext(AppContext);
   const [newCategoryTitle, setNewCategoryTitle] = useState("");
   const [updatedCategoryTitle, setUpdatedCategoryTitle] = useState("");
 
-
-  
-  
- 
   const handleAddCategory = () => {
     // aggiunge nuove categorie a category ma ovviamente non allo state, mi servirà poi per filtrare i tasks
     const newCategory = {
@@ -61,27 +56,44 @@ function CategoryBar() {
   };
 
   const handleDeleteCategory = (title) => {
-    // eliminando la categoria da category, elimino poi dallo stato i task il cui category titolo è uguale alla categoria eliminata, aggiungere modale se utente è sicuro di farlo 
+    // eliminando la categoria da category, elimino poi dallo stato i task il cui category titolo è uguale alla categoria eliminata, aggiungere modale se utente è sicuro di farlo
     setCategory((prev) => prev?.filter((cat) => cat?.categoryTitle !== title));
-    dispatch({type: 'DELETE_CATEGORY', catTitle: title})
+    dispatch({ type: "DELETE_CATEGORY", catTitle: title });
   };
-
 
   return (
     <div className={style.categoryWrap}>
       {category?.map((cat) => {
         return (
-          <div key={cat?.categoryId} className={style.category} onClick={() => {
-            setCurrentCatTitle(cat?.categoryTitle)
-          }}>
+          <div
+            key={cat?.categoryId}
+            className={style.category}
+            onClick={() => {
+              setCurrentCatTitle(cat?.categoryTitle);
+            }}
+          >
             <div className={style.catIcons}>
-              {cat?.categoryTitle === "study" ? <img src={studyIcon} alt='hands'/> : null}
-              {cat?.categoryTitle === "work" ? <img src={workIcon} alt='hands'/> : null}
-              {cat?.categoryTitle === "home" ? <BsFillHouseFill  style={{fontSize:'3rem'}} /> : null}
+              {cat?.categoryTitle === "study" ? (
+                <img
+                  src={studyIcon}
+                  alt="hands"
+                  style={{ width: "24px", height: "24px" }}
+                />
+              ) : null}
+              {cat?.categoryTitle === "work" ? (
+                <img
+                  src={workIcon}
+                  alt="hands"
+                  style={{ width: "24px", height: "24px" }}
+                />
+              ) : null}
+              {cat?.categoryTitle === "home" ? (
+                <BsFillHouseFill style={{ fontSize: "1.5rem" }} />
+              ) : null}
               {cat?.categoryTitle !== "study" &&
               cat?.categoryTitle !== "work" &&
               cat?.categoryTitle !== "home" ? (
-                <TbMenu style={{fontSize:'3rem'}} />
+                <TbMenu style={{ fontSize: "1.5rem" }} />
               ) : null}
             </div>
             <form
@@ -90,28 +102,27 @@ function CategoryBar() {
                 handleChangeCategoryTitle();
               }}
             >
-              <div className={style.inputCategory}
-              >
-                {" "}
+              <div style={{ width: "76%" }}>
                 <input
                   type="text"
                   placeholder={cat?.categoryTitle}
                   data-title={cat?.categoryTitle}
                   onChange={handleDataTitle}
                 />{" "}
-                <button
-                type='submit'
-                  data-title={cat?.categoryTitle}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleDeleteCategory(cat?.categoryTitle)
-                  }}
-
-                >
-                  <TiDelete style={{color: 'purple', fontSize:'2rem'}}/>
-                </button>
               </div>
             </form>
+            <div>
+              <button
+                type="submit"
+                data-title={cat?.categoryTitle}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleDeleteCategory(cat?.categoryTitle);
+                }}
+              >
+                <TiDelete style={{ color: "white", fontSize: "1.5rem" }} />
+              </button>
+            </div>
           </div>
         );
       })}
