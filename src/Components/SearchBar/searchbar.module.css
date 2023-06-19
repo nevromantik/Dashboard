@@ -1,138 +1,30 @@
-.searchBarWrap{
-    width: 121.2%;
-    height: 100%;
-    background-color: #692B75;
-    backdrop-filter: blur(5px);
-
-   display: flex;
-   justify-content: space-between;
-   color: white;
-   align-items: center;
-   -webkit-box-shadow: 10px -2px 32px 1px rgba(0,0,0,0.82); 
-box-shadow: 10px -2px 32px 1px rgba(0,0,0,0.82);
-   
-}
-.navbar{
-    
-    
-    width: 150px;  
-    padding: 1rem;  
-    position: relative;
-    left: 49.9rem;
-    bottom: 2.3rem;
-    display: flex;
-    align-items: start;
-    justify-content: space-around;
-    cursor: pointer;
-    background-color: rgba(91, 19, 92, 0.808);
-    -webkit-animation: scale-in-ver-top 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-animation: scale-in-ver-top 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-border-bottom-left-radius: 10px;
-border-bottom-right-radius: 10px;
-
-}
-.navbar div{
-    transition: transform 0.2s ease;
-
-}
-.navbar div:hover{
-    transform: translateY(-10px);
-}
-@-webkit-keyframes scale-in-ver-top {
-    0% {
-      -webkit-transform: scaleY(0);
-              transform: scaleY(0);
-      -webkit-transform-origin: 100% 0%;
-              transform-origin: 100% 0%;
-      opacity: 1;
-    }
-    100% {
-      -webkit-transform: scaleY(1);
-              transform: scaleY(1);
-      -webkit-transform-origin: 100% 0%;
-              transform-origin: 100% 0%;
-      opacity: 1;
-    }
-  }
-  @keyframes scale-in-ver-top {
-    0% {
-      -webkit-transform: scaleY(0);
-              transform: scaleY(0);
-      -webkit-transform-origin: 100% 0%;
-              transform-origin: 100% 0%;
-      opacity: 1;
-    }
-    100% {
-      -webkit-transform: scaleY(1);
-              transform: scaleY(1);
-      -webkit-transform-origin: 100% 0%;
-              transform-origin: 100% 0%;
-      opacity: 1;
-    }
-  }
-.inputWrap{
-    display: flex;
-    margin-left: 1rem;
-   
-}
-.inputWrap input{
-    background-color: transparent;
-    border: none;
-    margin-left: 1rem;
-    color: white
-}
-.inputWrap input::placeholder{
-    color: white
-}
-.iconsWrap{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.icon{
-    margin-right: 2rem;
+.container{
+    background-color: white;
     display: flex;
     align-items: center;
-    cursor:pointer
+    padding: 1rem;
 }
 
-
-
-
-/* TASK PATHNAME SEARCHBAR STYLE*/
-
-.taskLogo img{
-    height: 2.5rem;
-    position: relative;
-    left: 1rem;
-    top: 0.2rem;
-
+.container p{
+    margin-right: 5rem;
 }
 
-.taskLogo{
-    position: relative;
-    right: 4rem;
-    background-color: #692B75;
-    width: 62.9px;
-    height: 3.4rem;
-    border: 0.5px solid rgb(194, 193, 193);
+.container input{
+    background-color: #f7f7f7 ;
+border: none    
+   
+}
+.container input::placeholder{
+    font-size: 0.8rem;
+}
+
+.inputContainer{
+    padding: 0.8rem;
     border-radius: 10px;
-}
-
-.taskInputWrap{
+    background-color: #f7f7f7 ;
+    width: 13%;
     display: flex;
-    position: relative;
-    left: 45rem
-   
-}
-.taskInputWrap input{
-    background-color: transparent;
-    border: none;
-    margin-left: 1rem;
-    color: white
-}
-.taskInputWrap input::placeholder{
-    color: white
+    justify-content: space-between;
+    align-items: center;
+
 }

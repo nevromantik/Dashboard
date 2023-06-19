@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+.container img{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+.container p{
+    margin-left: 1rem;
+    color: #723279;
+    font-weight: 700;
+    font-size: 1rem;
+}
+.container span{
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+}

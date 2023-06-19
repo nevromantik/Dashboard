@@ -1,0 +1,114 @@
+.container{
+    background-color: #323435 ;
+    color: #98999a; 
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.dashboardRoute, .inboxRoute, .todayRoute, .projectRoute{
+padding: 0.8rem;
+width: 80%;
+border-radius: 10px;
+display: flex;
+justify-content: start;
+align-items: center;
+cursor: pointer;
+flex-direction: row;
+height: 20px;
+margin-bottom: 0.5rem;
+font-size: 0.8rem;
+
+}
+.dashboardRoute:hover, .inboxRoute:hover, .todayRoute:hover, .projectRoute:hover, .settings:hover{
+    background-color: #8705d2;
+    color: white;
+    font-weight: 600;
+}
+.settingsWrap{
+border-top: 2px solid #4e5051;
+width: 80%;
+display: flex;
+justify-content: start;
+align-items: center;
+flex-direction: column;
+margin-top: 21rem;
+font-size: 0.8rem;
+
+
+}
+.settings, .logout{
+    padding: 0.8rem;
+width: 100%;
+border-radius: 10px;
+display: flex;
+justify-content: start;
+align-items: center;
+cursor: pointer;
+flex-direction: row;
+height: 20px;
+margin-bottom: 0.5rem;
+
+}
+.dashboardRoute img{
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+}
+
+
+
+.inbox{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    right: 5px;
+    margin-right: 0.5rem;
+}
+
+.today{
+    width: 23px;
+    height: 23px;
+    position: relative;
+    right: 1px;
+    margin-right: 0.8rem;
+}
+
+.project{
+    width: 25px;
+    height: 25px;
+    position: relative;
+    right: 1px;
+    margin-right: 0.8rem;
+}
+.submenu{
+    display: flex;
+    align-items: center;
+}
+.settings img , .logout img{
+    width: 25px;
+    height: 25px;
+    margin-right: 1rem;
+}
+
+.submenuWrap{
+    border-left: 2px solid #4e5051;
+    
+    width: 60%;
+    padding: 0.8rem;
+    cursor: pointer;
+}
+
+.submenuWrap p{
+    
+    font-size: 0.8rem;
+}
+
+.submenuWrap div{
+    padding: 0.8rem;
+    height: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}

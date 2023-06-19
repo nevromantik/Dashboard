@@ -5,16 +5,18 @@ export const USERS = [
     fullname: "Mario Rossi",
     email: "test@gmail.com",
     password: "test",
-    categories: [],
+    projects: [
+      {id: uniqid(), title: 'Dashboard Project', tags: [], dueDate: '', description: '', subtasks: [], completed: false}
+    ],
     tasks: [
       {
         id: uniqid(),
         title: "studiare matematica",
         category: "study",
-      
+        dueDate: '',
         priority: "high",
         completed: false,
-        subtasks: [{ id: uniqid(), title: "es 1", completed: false }],
+        tagsCategory: [],
       },
       {
         id: uniqid(),
@@ -22,7 +24,10 @@ export const USERS = [
         category: "work",
         priority: "medium",
         completed: false,
-        subtasks: [{ id: uniqid(), title: "primo step", completed: false }],
+        dueDate: '',
+        tagsCategory: [],
+
+
       },
       {
         id: uniqid(),
@@ -30,7 +35,10 @@ export const USERS = [
         category: "study",
         priority: "high",
         completed: false,
-        subtasks: [{ id: uniqid(), title: "es 1", completed: false }],
+        dueDate: '',
+        tagsCategory: [],
+
+
       },
       {
         id: uniqid(),
@@ -38,7 +46,10 @@ export const USERS = [
         category: "study",
         priority: "high",
         completed: false,
-        subtasks: [{ id: uniqid(), title: "es 1", completed: false }],
+        dueDate: '',
+        tagsCategory: [],
+
+
       },
       {
         id: uniqid(),
@@ -46,7 +57,10 @@ export const USERS = [
         category: "study",
         priority: "high",
         completed: false,
-        subtasks: [{ id: uniqid(), title: "es 1", completed: false }],
+        dueDate: '',
+        tagsCategory: [],
+
+
       },
     ],
   },
@@ -56,7 +70,9 @@ export const USERS = [
     email: "jessicamoretti@gmail.com",
     password: "jessica",
     categories: [],
-
+    projects: [
+      {id: uniqid(), title: 'Romanzo', tags: [], dueDate: '', description: '', subtasks: [], completed: false}
+    ],
     tasks: [
       {
         id: uniqid(),
@@ -64,7 +80,10 @@ export const USERS = [
         priority: "low",
         category: "home",
         completed: false,
-        subtasks: [{ id: uniqid(), title: "patate", completed: false }],
+        dueDate: '',
+        tagsCategory: [],
+
+
       },
       {
         id: uniqid(),
@@ -72,9 +91,11 @@ export const USERS = [
         priority: "low",
         category: "friends",
         completed: false,
-        subtasks: [
-          { id: uniqid(), title: "comprare regalo", completed: false },
-        ],
+        dueDate: '',
+        tagsCategory: [],
+
+
+        
       },
     ],
   },

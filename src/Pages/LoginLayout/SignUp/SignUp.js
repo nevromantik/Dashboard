@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import style from "./signup.module.css";
-import Logo from "../../../Components/Logo";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AppContext } from "../../../App";
@@ -48,7 +47,6 @@ function SignUp() {
   return (
     <div className={style.loginContainer}>
       <header>
-        <Logo />
       </header>
       <main className={style.loginFormWrap}>
         <form

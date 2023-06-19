@@ -1,0 +1,17 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 7% 45% 48%;
+    background-color: #f9f9f9;
+}
+.searchbar{
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.projectcard{
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}

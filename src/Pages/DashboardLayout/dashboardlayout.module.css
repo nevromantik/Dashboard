@@ -1,21 +1,6 @@
 .dashboardLayout{
     display: grid;
-    grid-template-columns: 3% 80%;
-    grid-template-rows: 55px 93vh;
+    grid-template-columns: 1fr 7fr;
+    height: 100vh;
 }
 
-.outlet{
-    grid-row-start: 2;
-    grid-column-start: 2;
-}
-
-.searchBar{
-    grid-row-start: 1;
-    grid-column-start: 2;
-}
-
-.categoryBar{
-    grid-column-start: 1;
-    grid-row-start: 2;
-    grid-row-end: 3;
-}

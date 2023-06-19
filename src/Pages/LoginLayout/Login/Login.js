@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./login.module.css";
-import Logo from "../../../Components/Logo";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../../../App";
 import { useContext, useState } from "react";
@@ -28,11 +27,10 @@ function Login() {
     }
     navigate("dashboard");
   };
-
+console.log(state[0])
   return (
     <div className={style.loginContainer}>
       <header>
-        <Logo />
       </header>
       <main className={style.loginFormWrap}>
         <form
