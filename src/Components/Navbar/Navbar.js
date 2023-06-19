@@ -9,21 +9,23 @@ import articleIcon from "../../Assets/Navbar/icons8-article-64.png";
 import settingsIcon from '../../Assets/Navbar/icons8-settings-50.png';
 import logoutIcon from '../../Assets/Navbar/icons8-logout-rounded-up-64.png'
 import { RiArrowDropUpFill } from "react-icons/ri";
+import {  useNavigate } from "react-router-dom";
 function Navbar() {
+  const navigate = useNavigate()
   return (
     <div className={style.container}>
       <div>
         <Logo />
       </div>
-      <div className={style.dashboardRoute}>
+      <div className={style.dashboardRoute}  onClick={() => navigate('./')}>
         <div>
           <img src={dashIcon} alt="dashboard icon" />
         </div>
-        <div>
+        <div >
           <p>Dashboard</p>
         </div>
       </div>
-      <div className={style.inboxRoute}>
+      <div className={style.inboxRoute}  onClick={() => navigate('tasks')}>
         <div>
           <img src={inboxIcon} alt="Inbox icon" className={style.inbox} />
         </div>

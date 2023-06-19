@@ -1,0 +1,47 @@
+.container{
+    padding: 0.6rem;
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+    border-bottom: 2px solid      #fafafa;
+    
+}
+
+
+.check{
+    border: 1px solid #acacac;
+    
+    height: 18px;
+    width: 18px;
+    border-radius: 5px;
+    margin-top: 1.2rem;
+    margin-right: 1rem;
+}
+.check:hover{
+    background-color: #8705D2;
+    border-color: #8705D2;
+}
+
+.task{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+    width: 93%;
+}
+
+.tag{
+    display: flex;
+    font-size: 0.8rem;
+
+}
+
+.priority{
+    margin-top: 1.6rem;
+    font-size: 0.8rem;
+}
+
+.date p {
+    font-size: 0.8rem;
+
+}

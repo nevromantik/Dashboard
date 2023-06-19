@@ -7,6 +7,7 @@ import SignUp from "./Pages/LoginLayout/SignUp/SignUp";
 import DashboardLayout from "./Pages/DashboardLayout/DashboardLayout";
 import { USERS, CURRENTUSER } from "./Data/Data";
 import uniqid from "uniqid";
+import Inbox from "./Pages/TasksPage/Inbox/Inbox";
 import WelcomePage from "./Pages/WelcomePage/WelcomePage";
 export const AppContext = createContext(null);
 
@@ -46,6 +47,8 @@ function App() {
             </Route>
             <Route path="dashboard" element={<DashboardLayout />}>
               <Route index element={<WelcomePage/>}/>
+              <Route path='tasks' element={<Inbox/>}/>
+    
               
             </Route>
           </Routes>
