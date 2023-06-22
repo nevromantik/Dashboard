@@ -35,6 +35,15 @@ function reducer(state, action) {
           return task;
         });
         return [{...state[0], tasks: x}];
+      
+      case "UPDATE_TASK" : 
+      const UPDATED = state[0]?.tasks?.map((task) => {
+        if(task.id === action.taskId){
+          return {...action.payload}
+        }
+        return task
+      })
+      return [{...state[0], tasks: UPDATED }]
     default:
       return state;
   }
@@ -46,6 +55,10 @@ function App() {
 
   const [displayForm, setDisplayForm] = useState("create task");
   const [deletedTasks, setDeletedTasks] = useState([]);
+  const [completedTasks, setCompletedTasks] = useState([]);
+  const [selectedTask, setSelectedTask] = useState({});
+
+  const [taskId, setTaskId] = useState('')
   return (
     <div className="App">
       <AppContext.Provider
@@ -58,6 +71,9 @@ function App() {
           setDisplayForm,
           deletedTasks,
           setDeletedTasks,
+          completedTasks, setCompletedTasks, 
+          selectedTask, setSelectedTask,
+          taskId, setTaskId
         }}
       >
         <BrowserRouter>

@@ -8,18 +8,16 @@ import { AppContext } from "../../App";
 import DeletedTasks from "./DeletedTasks";
 import UrgentTask from "./UrgentTask";
 function TasksList() {
-  const { displayForm, setDisplayForm, state, deletedTasks } =
+  const { displayForm, setDisplayForm, state, deletedTasks, completedTasks, setCompletedTasks, setSelectedTask, selectedTask } =
     useContext(AppContext);
   const [selectedSection, setSelectedSection] = useState("All Tasks");
   const [showCompleted, setShowCompleted] = useState(false);
   const [urgentTasks, setUrgentTasks] = useState([]);
-  const [completedTasks, setCompletedTasks] = useState([]);
 
-
-  const [allTasksLength, setAllTasksLengt] = useState(0)
-  const [completedTasksLength, setCompletedTasksLength] = useState(0)
-  const [urgentTasksLength, setUrgentTasksLength] = useState(0)
-  const [deletedTasksLength, setDeletedTasksLength] = useState(0)
+  const [allTasksLength, setAllTasksLengt] = useState(0);
+  const [completedTasksLength, setCompletedTasksLength] = useState(0);
+  const [urgentTasksLength, setUrgentTasksLength] = useState(0);
+  const [deletedTasksLength, setDeletedTasksLength] = useState(0);
 
   useEffect(() => {
     const filtered = state[0]?.tasks?.filter((task) => task?.urgent === true);
@@ -35,11 +33,17 @@ function TasksList() {
 
     setAllTasksLengt(state[0]?.tasks?.length);
     setCompletedTasksLength(completedTasks?.length);
-    setUrgentTasksLength(urgentTasks?.length)
-    setDeletedTasksLength(deletedTasks?.length)
+    setUrgentTasksLength(urgentTasks?.length);
+    setDeletedTasksLength(deletedTasks?.length);
+  }, [
+    state,
+    completedTasks?.length,
+    urgentTasks?.length,
+    deletedTasks?.length,
+    setCompletedTasks
+  ]);
+  console.log(selectedTask)
 
-  }, [state, completedTasks?.length, urgentTasks?.length , deletedTasks?.length]);
-    
 
   return (
     <div className={style.container}>
@@ -70,9 +74,11 @@ function TasksList() {
               <FaTasks style={{ color: "#8705D2", marginRight: "1rem" }} />
               <p>Tasks</p>
             </div>
-            <div className={style.count}>{selectedSection === 'All Tasks' ? allTasksLength : null}
-            {selectedSection === 'Urgent Tasks' ? urgentTasksLength : null}
-            {selectedSection === 'Deleted Tasks' ? deletedTasksLength : null}</div>
+            <div className={style.count}>
+              {selectedSection === "All Tasks" ? allTasksLength : null}
+              {selectedSection === "Urgent Tasks" ? urgentTasksLength : null}
+              {selectedSection === "Deleted Tasks" ? deletedTasksLength : null}
+            </div>
           </div>
         </section>
         <div className={style.task}>
@@ -86,6 +92,7 @@ function TasksList() {
                     completed={task?.completed}
                     category={task?.category}
                     urgent={task?.urgent}
+                   
                   />
                 );
               })
@@ -119,35 +126,43 @@ function TasksList() {
               })
             : null}
         </div>
-       {selectedSection === 'All Tasks' ? <> <section onClick={() => setShowCompleted(!showCompleted)}>
-          <div className={style.completed}>
-            <div className={style.first}>
-              <BsFillCheckCircleFill
-                style={{ color: "#8705D2", marginRight: "1rem" }}
-              />
-              <p>Completed</p>
-            </div>
-            <div className={style.count}>{selectedSection === 'All Tasks' ? completedTasksLength: null}
-         
-            </div>
-          </div>
-        </section>
-        <div className={style.task}>
-          {showCompleted
-            ? completedTasks?.map((task) => {
-                return (
-                  <Task
-                    id={task?.id}
-                    title={task?.title}
-                    dueDate={task?.dueDate}
-                    completed={task?.completed}
-                    category={task?.category}
-                    urgent={task?.urgent}
+        {selectedSection === "All Tasks" ? (
+          <>
+            {" "}
+            <section onClick={() => setShowCompleted(!showCompleted)}>
+              <div className={style.completed}>
+                <div className={style.first}>
+                  <BsFillCheckCircleFill
+                    style={{ color: "#8705D2", marginRight: "1rem" }}
                   />
-                );
-              })
-            : null}
-        </div> </>  : null}
+                  <p>Completed</p>
+                </div>
+                <div className={style.count}>
+                  {selectedSection === "All Tasks"
+                    ? completedTasksLength
+                    : null}
+                </div>
+              </div>
+            </section>
+            <div className={style.task}>
+              {showCompleted
+                ? completedTasks?.map((task) => {
+                    return (
+                      <Task
+                        id={task?.id}
+                        title={task?.title}
+                        dueDate={task?.dueDate}
+                        completed={task?.completed}
+                        category={task?.category}
+                        urgent={task?.urgent}
+                      
+                      />
+                    );
+                  })
+                : null}
+            </div>{" "}
+          </>
+        ) : null}
       </div>
     </div>
   );
