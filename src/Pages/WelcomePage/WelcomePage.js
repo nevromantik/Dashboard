@@ -5,6 +5,7 @@ import DashProjectCard from '../../Components/DashCards/DashProjectCard';
 import DashTaskCard from '../../Components/DashCards/DashTaskCard';
 import DashArticlesCard from '../../Components/DashCards/DashArticlesCard';
 import DashWeather from '../../Components/DashCards/DashWeather';
+import CreateTaskForm from '../../Components/Forms/CreateTaskForm';
 function WelcomePage() {
   return (
     <div className={style.container}>

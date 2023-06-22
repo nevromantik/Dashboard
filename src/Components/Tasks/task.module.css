@@ -27,8 +27,7 @@
     flex-direction: row;
     align-items: start;
     justify-content: start;
-    width: 93%;
-}
+    width: 103%;}
 
 .tag{
     display: flex;
@@ -43,5 +42,33 @@
 
 .date p {
     font-size: 0.8rem;
+    color: #a0a0a3
 
+}
+
+.tag div{
+    color: #5c5c5f;
+    width: 40px;
+    height: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eeeeed;
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.priority{
+    color: #cd8c8a;
+    width: 40px;
+    height: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fcebea;
+    border-radius: 4px;
+    padding: 0.5rem;
+    cursor: pointer;
+    
 }

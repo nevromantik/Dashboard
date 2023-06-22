@@ -16,18 +16,36 @@ function reducer(state, action) {
   switch (action.type) {
     case "ADD_CURRENT_USER":
       return [action.payload];
-    
+
+    case "ADD_TASK":
+      const updatedTasks = [...state[0]?.tasks, action.payload];
+      return [{ ...state[0], tasks: updatedTasks }];
+    case "DELETE_TASK":
+      const filtered = state[0]?.tasks?.filter(
+        (task) => task?.id !== action.selectedTaskId
+      );
+      const filteredTasks = [...filtered];
+      return [{ ...state[0], tasks: filteredTasks }];
+
+      case "COMPLETE_TASK":
+        const x = state[0]?.tasks?.map((task) => {
+          if (task.id === action.taskId) {
+            return {...task, completed: true};
+          }
+          return task;
+        });
+        return [{...state[0], tasks: x}];
     default:
       return state;
   }
 }
 function App() {
- 
-
   const [users, setUsers] = useState(USERS);
- 
+
   const [state, dispatch] = useReducer(reducer, initialState);
- 
+
+  const [displayForm, setDisplayForm] = useState("create task");
+  const [deletedTasks, setDeletedTasks] = useState([]);
   return (
     <div className="App">
       <AppContext.Provider
@@ -36,7 +54,10 @@ function App() {
           setUsers,
           state,
           dispatch,
-        
+          displayForm,
+          setDisplayForm,
+          deletedTasks,
+          setDeletedTasks,
         }}
       >
         <BrowserRouter>
@@ -46,10 +67,8 @@ function App() {
               <Route path="signup" element={<SignUp />} />
             </Route>
             <Route path="dashboard" element={<DashboardLayout />}>
-              <Route index element={<WelcomePage/>}/>
-              <Route path='tasks' element={<Inbox/>}/>
-    
-              
+              <Route index element={<WelcomePage />} />
+              <Route path="tasks" element={<Inbox />} />
             </Route>
           </Routes>
         </BrowserRouter>

@@ -13,19 +13,17 @@ export const USERS = [
         id: uniqid(),
         title: "studiare matematica",
         category: "study",
-        dueDate: '',
-        priority: "high",
+        dueDate: 'Due date: June 23 2023 8:30',
+        urgent:  true,
         completed: false,
-        tagsCategory: [],
       },
       {
         id: uniqid(),
         title: "lavorare progetto 1 ",
         category: "work",
-        priority: "medium",
+        urgent:  false,
         completed: false,
-        dueDate: '',
-        tagsCategory: [],
+        dueDate: 'Due date: June 23 2023 8:30',
 
 
       },
@@ -33,10 +31,9 @@ export const USERS = [
         id: uniqid(),
         title: "studiare francese",
         category: "study",
-        priority: "high",
+        urgent:  true,
         completed: false,
-        dueDate: '',
-        tagsCategory: [],
+        dueDate: 'Due date: June 23 2023 8:30',
 
 
       },
@@ -44,10 +41,9 @@ export const USERS = [
         id: uniqid(),
         title: "studiare inglese",
         category: "study",
-        priority: "high",
+        urgent:  true,
         completed: false,
-        dueDate: '',
-        tagsCategory: [],
+        dueDate: 'Due date: June 23 2023 8:30',
 
 
       },
@@ -55,10 +51,9 @@ export const USERS = [
         id: uniqid(),
         title: "studiare fisica",
         category: "study",
-        priority: "high",
+        urgent:  false,
         completed: false,
-        dueDate: '',
-        tagsCategory: [],
+        dueDate: 'Due date: June 23 2023 8:30',
 
 
       },
@@ -77,22 +72,20 @@ export const USERS = [
       {
         id: uniqid(),
         title: "fare spesa",
-        priority: "low",
+        urgent:  true,
         category: "home",
         completed: false,
-        dueDate: '',
-        tagsCategory: [],
+        dueDate: 'Due date: June 23 2023 8:30',
 
 
       },
       {
         id: uniqid(),
         title: "andare al compleanno di Mario ",
-        priority: "low",
+        urgent:  true,
         category: "friends",
         completed: false,
-        dueDate: '',
-        tagsCategory: [],
+        dueDate: 'Due date: June 23 2023 8:30',
 
 
         
