@@ -14,6 +14,13 @@ function TasksList() {
   const [showCompleted, setShowCompleted] = useState(false);
   const [urgentTasks, setUrgentTasks] = useState([]);
   const [completedTasks, setCompletedTasks] = useState([]);
+
+
+  const [allTasksLength, setAllTasksLengt] = useState(0)
+  const [completedTasksLength, setCompletedTasksLength] = useState(0)
+  const [urgentTasksLength, setUrgentTasksLength] = useState(0)
+  const [deletedTasksLength, setDeletedTasksLength] = useState(0)
+
   useEffect(() => {
     const filtered = state[0]?.tasks?.filter((task) => task?.urgent === true);
     setUrgentTasks((prev) => {
@@ -25,8 +32,14 @@ function TasksList() {
     setCompletedTasks((prev) => {
       return [...completed];
     });
-  }, [state]);
-  console.log("completed", completedTasks);
+
+    setAllTasksLengt(state[0]?.tasks?.length);
+    setCompletedTasksLength(completedTasks?.length);
+    setUrgentTasksLength(urgentTasks?.length)
+    setDeletedTasksLength(deletedTasks?.length)
+
+  }, [state, completedTasks?.length, urgentTasks?.length , deletedTasks?.length]);
+    
 
   return (
     <div className={style.container}>
@@ -57,7 +70,9 @@ function TasksList() {
               <FaTasks style={{ color: "#8705D2", marginRight: "1rem" }} />
               <p>Tasks</p>
             </div>
-            <div className={style.count}>1</div>
+            <div className={style.count}>{selectedSection === 'All Tasks' ? allTasksLength : null}
+            {selectedSection === 'Urgent Tasks' ? urgentTasksLength : null}
+            {selectedSection === 'Deleted Tasks' ? deletedTasksLength : null}</div>
           </div>
         </section>
         <div className={style.task}>
@@ -104,7 +119,7 @@ function TasksList() {
               })
             : null}
         </div>
-        <section onClick={() => setShowCompleted(!showCompleted)}>
+       {selectedSection === 'All Tasks' ? <> <section onClick={() => setShowCompleted(!showCompleted)}>
           <div className={style.completed}>
             <div className={style.first}>
               <BsFillCheckCircleFill
@@ -112,7 +127,9 @@ function TasksList() {
               />
               <p>Completed</p>
             </div>
-            <div className={style.count}>10</div>
+            <div className={style.count}>{selectedSection === 'All Tasks' ? completedTasksLength: null}
+         
+            </div>
           </div>
         </section>
         <div className={style.task}>
@@ -130,7 +147,7 @@ function TasksList() {
                 );
               })
             : null}
-        </div>
+        </div> </>  : null}
       </div>
     </div>
   );
