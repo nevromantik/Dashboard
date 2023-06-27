@@ -58,7 +58,7 @@ function Navbar() {
           <p>Example Project</p>
         </div>
       </div>
-      <div className={style.projectRoute}>
+      <div className={style.projectRoute} onClick={() => navigate('articles')}>
         <div>
           <img
             src={articleIcon}
@@ -66,7 +66,7 @@ function Navbar() {
             className={style.project}
           />
         </div>
-        <div className={style.submenu}>
+        <div className={style.submenu} >
           <p>Your articles</p>
           <RiArrowDropUpFill
             style={{ fontSize: "1.3rem", marginLeft: "1rem" }}

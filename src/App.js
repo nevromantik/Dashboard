@@ -9,6 +9,7 @@ import { USERS, CURRENTUSER } from "./Data/Data";
 import uniqid from "uniqid";
 import Inbox from "./Pages/TasksPage/Inbox/Inbox";
 import WelcomePage from "./Pages/WelcomePage/WelcomePage";
+import ArticlesPage from "./Pages/ArticlePage/ArticlesPage";
 export const AppContext = createContext(null);
 
 const initialState = CURRENTUSER;
@@ -85,6 +86,8 @@ function App() {
             <Route path="dashboard" element={<DashboardLayout />}>
               <Route index element={<WelcomePage />} />
               <Route path="tasks" element={<Inbox />} />
+              <Route path="articles" element={<ArticlesPage />} />
+
             </Route>
           </Routes>
         </BrowserRouter>
