@@ -8,6 +8,7 @@ export const USERS = [
     projects: [
       {id: uniqid(), title: 'Dashboard Project', tags: [], dueDate: '', description: '', subtasks: [], completed: false}
     ],
+    articles: [],
     tasks: [
       {
         id: uniqid(),
@@ -65,6 +66,8 @@ export const USERS = [
     email: "jessicamoretti@gmail.com",
     password: "jessica",
     categories: [],
+    articles: [],
+
     projects: [
       {id: uniqid(), title: 'Romanzo', tags: [], dueDate: '', description: '', subtasks: [], completed: false}
     ],

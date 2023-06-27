@@ -1,9 +1,12 @@
 .container{
     padding: 0.6rem;
     display: flex;
-    align-items: start;
+    align-items: center;
     justify-content: space-around;
     border-bottom: 2px solid      #fafafa;
+    flex-direction: row;
+    margin: 1rem;
+    padding-bottom: 1rem;
     
 }
 
@@ -27,7 +30,9 @@
     flex-direction: row;
     align-items: start;
     justify-content: start;
-    width: 103%;}
+    width: 103%;
+    margin-left: 1rem; 
+}
 
 .tag{
     display: flex;
@@ -72,3 +77,4 @@
     cursor: pointer;
     
 }
+

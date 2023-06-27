@@ -28,23 +28,33 @@ function reducer(state, action) {
       const filteredTasks = [...filtered];
       return [{ ...state[0], tasks: filteredTasks }];
 
-      case "COMPLETE_TASK":
-        const x = state[0]?.tasks?.map((task) => {
-          if (task.id === action.taskId) {
-            return {...task, completed: true};
-          }
-          return task;
-        });
-        return [{...state[0], tasks: x}];
-      
-      case "UPDATE_TASK" : 
-      const UPDATED = state[0]?.tasks?.map((task) => {
-        if(task.id === action.taskId){
-          return {...action.payload}
+    case "COMPLETE_TASK":
+      const x = state[0]?.tasks?.map((task) => {
+        if (task.id === action.taskId) {
+          return { ...task, completed: true };
         }
-        return task
-      })
-      return [{...state[0], tasks: UPDATED }]
+        return task;
+      });
+      return [{ ...state[0], tasks: x }];
+
+    case "UPDATE_TASK":
+      const UPDATED = state[0]?.tasks?.map((task) => {
+        if (task.id === action.taskId) {
+          return { ...action.payload };
+        }
+        return task;
+      });
+      return [{ ...state[0], tasks: UPDATED }];
+    case "ADD_ARTICLE": 
+    const updatedArticles = [...state[0]?.articles, action.payload];
+    return [{ ...state[0], articles: updatedArticles }];
+
+    case "DELETE_ARTICLE":
+      const filteredArticles = state[0]?.articles?.filter(
+        (article) => article?.id !== action.selectedArticleID
+      );
+      const articles = [...filteredArticles];
+      return [{ ...state[0], articles: articles }];
     default:
       return state;
   }
@@ -59,7 +69,7 @@ function App() {
   const [completedTasks, setCompletedTasks] = useState([]);
   const [selectedTask, setSelectedTask] = useState({});
 
-  const [taskId, setTaskId] = useState('')
+  const [taskId, setTaskId] = useState("");
   return (
     <div className="App">
       <AppContext.Provider
@@ -72,9 +82,12 @@ function App() {
           setDisplayForm,
           deletedTasks,
           setDeletedTasks,
-          completedTasks, setCompletedTasks, 
-          selectedTask, setSelectedTask,
-          taskId, setTaskId
+          completedTasks,
+          setCompletedTasks,
+          selectedTask,
+          setSelectedTask,
+          taskId,
+          setTaskId,
         }}
       >
         <BrowserRouter>
@@ -87,7 +100,6 @@ function App() {
               <Route index element={<WelcomePage />} />
               <Route path="tasks" element={<Inbox />} />
               <Route path="articles" element={<ArticlesPage />} />
-
             </Route>
           </Routes>
         </BrowserRouter>

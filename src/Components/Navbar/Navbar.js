@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import style from "./navbar.module.css";
 import Logo from "../Logo/Logo";
 import dashIcon from "../../Assets/Navbar/icons8-circled-menu-50.png";
@@ -10,8 +10,10 @@ import settingsIcon from '../../Assets/Navbar/icons8-settings-50.png';
 import logoutIcon from '../../Assets/Navbar/icons8-logout-rounded-up-64.png'
 import { RiArrowDropUpFill } from "react-icons/ri";
 import {  useNavigate } from "react-router-dom";
+import { AppContext } from "../../App";
 function Navbar() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const {state} = useContext(AppContext)
   return (
     <div className={style.container}>
       <div>
@@ -75,9 +77,11 @@ function Navbar() {
         </div>
       </div>
       <div className={style.submenuWrap}>
-        <div>
-          <p>Example rticle</p>
+        {state[0]?.articles?.map((article) => {
+          return <div key={article?.id}>
+          <p>{article?.title}</p>
         </div>
+        })}
       </div>
 
       <div className={style.settingsWrap}>
