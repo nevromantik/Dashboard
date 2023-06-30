@@ -2,10 +2,19 @@ import React, { useState } from "react";
 import style from "./dashtask.module.css";
 import { useContext , useEffect} from "react";
 import { AppContext } from "../../App";
+import NoArticlesCard from "../NoArticlesCard/NoArticlesCard";
+import noArticle from '../../Assets/NoCard/icons8-book-64.png';
+import noTasks from '../../Assets/NoCard/icons8-task-64.png';
+import noProject from '../../Assets/NoCard/icons8-project-64.png';
 function DashTaskCard() {
   const { state } = useContext(AppContext);
   const [uncompletedTasks, setUncompletedTasks] = useState([]);
 
+  const [noCard, setNoCard] = useState([
+    {type: 'articles', img: noArticle},
+    {type: 'tasks', img: noTasks},
+    {type: 'projects', img: noProject}
+   ])
   useEffect(() => {
   const uncompleted = state[0]?.tasks?.filter((task) => task?.completed === false).slice(0,4)
   setUncompletedTasks(uncompleted)
@@ -22,8 +31,8 @@ function DashTaskCard() {
           <button>View All</button>
         </div>
       </div>
-      
-      {uncompletedTasks?.map((task) => {
+      {state[0]?.tasks?.length > 0 ? 
+      uncompletedTasks?.map((task) => {
         return  <div className={style.cardrow}>
         <div className={style.checkwrap}>
           <div className={style.check}></div>
@@ -37,7 +46,7 @@ function DashTaskCard() {
           </div>
         </div>
       </div>
-      })}
+      }) :null}
      
 
     </div>

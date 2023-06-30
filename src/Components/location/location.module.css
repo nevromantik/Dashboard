@@ -1,0 +1,44 @@
+.container{
+    color: black; 
+    width: 355%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.forecastWrap{
+    height: 90%;
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    position: relative;
+    right: 17rem;
+    align-items: center;
+
+}
+
+.inputContainer{
+    padding: 0.8rem;
+    border-radius: 10px;
+    background-color: #f7f7f7 ;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.inputContainer input{
+    background-color: #f7f7f7 ;
+border: none    
+   
+}
+.inputContainer input::placeholder{
+    font-size: 0.8rem;
+}
+.forecastWrap h3{
+    color: rgb(85, 83, 83)
+}

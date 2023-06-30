@@ -7,7 +7,9 @@
     flex-direction: row;
     margin: 1rem;
     padding-bottom: 1rem;
-    
+    height: 153px;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 
@@ -78,3 +80,28 @@
     
 }
 
+.addBtn {
+    border-radius: 5px;
+    padding: 1rem;
+    border: none;
+    background-color: #8705D2;
+    color: white;
+    cursor: pointer;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.addBtn2 {
+    border-radius: 5px;
+    border: none;
+    background-color: #8705D2;
+    color: white;
+    cursor: pointer;
+    margin-left: 2rem;
+    padding: 0.5rem
+}
+
+.addBtn2:hover{
+    background-color: rgb(194, 172, 201);
+
+}

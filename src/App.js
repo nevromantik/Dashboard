@@ -10,6 +10,8 @@ import uniqid from "uniqid";
 import Inbox from "./Pages/TasksPage/Inbox/Inbox";
 import WelcomePage from "./Pages/WelcomePage/WelcomePage";
 import ArticlesPage from "./Pages/ArticlePage/ArticlesPage";
+import FullArticle from "./Components/Articles/fullArticle/FullArticle";
+import AiPage from "./Pages/AiPage/AiPage";
 export const AppContext = createContext(null);
 
 const initialState = CURRENTUSER;
@@ -45,9 +47,11 @@ function reducer(state, action) {
         return task;
       });
       return [{ ...state[0], tasks: UPDATED }];
-    case "ADD_ARTICLE": 
-    const updatedArticles = [...state[0]?.articles, action.payload];
-    return [{ ...state[0], articles: updatedArticles }];
+    
+   
+    case "ADD_ARTICLE":
+      const updatedArticles = [...state[0]?.articles, action.payload];
+      return [{ ...state[0], articles: updatedArticles }];
 
     case "DELETE_ARTICLE":
       const filteredArticles = state[0]?.articles?.filter(
@@ -55,6 +59,11 @@ function reducer(state, action) {
       );
       const articles = [...filteredArticles];
       return [{ ...state[0], articles: articles }];
+
+    
+
+      
+
     default:
       return state;
   }
@@ -68,8 +77,12 @@ function App() {
   const [deletedTasks, setDeletedTasks] = useState([]);
   const [completedTasks, setCompletedTasks] = useState([]);
   const [selectedTask, setSelectedTask] = useState({});
-
+  const [articleId, setArticleId] = useState("");
   const [taskId, setTaskId] = useState("");
+  const [editorMode, setEditorMode] = useState(false);
+   
+ 
+
   return (
     <div className="App">
       <AppContext.Provider
@@ -88,6 +101,11 @@ function App() {
           setSelectedTask,
           taskId,
           setTaskId,
+          articleId,
+          setArticleId,
+          editorMode,
+          setEditorMode,
+         
         }}
       >
         <BrowserRouter>
@@ -100,6 +118,8 @@ function App() {
               <Route index element={<WelcomePage />} />
               <Route path="tasks" element={<Inbox />} />
               <Route path="articles" element={<ArticlesPage />} />
+              <Route path="fullarticle" element={<FullArticle />} />
+              <Route path="ai" element={<AiPage />} />
             </Route>
           </Routes>
         </BrowserRouter>

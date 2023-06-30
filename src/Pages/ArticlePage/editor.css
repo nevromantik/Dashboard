@@ -1,0 +1,20 @@
+
+
+div.wrapper-class{
+    background-color: #e4e1e6;
+
+}
+
+div.toolbar-class{
+    background-color: #8737b6;
+}
+
+div.rdw-option-wrapper {
+border: none;
+border-radius: 10px;
+}
+
+div.editor-class{
+    height: 500px;
+    padding: 2rem;
+}

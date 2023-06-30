@@ -5,59 +5,11 @@ export const USERS = [
     fullname: "Mario Rossi",
     email: "test@gmail.com",
     password: "test",
-    projects: [
-      {id: uniqid(), title: 'Dashboard Project', tags: [], dueDate: '', description: '', subtasks: [], completed: false}
-    ],
+    location: 'roma',
+   
     articles: [],
     tasks: [
-      {
-        id: uniqid(),
-        title: "studiare matematica",
-        category: "study",
-        dueDate: 'Due date: June 23 2023 8:30',
-        urgent:  true,
-        completed: false,
-      },
-      {
-        id: uniqid(),
-        title: "lavorare progetto 1 ",
-        category: "work",
-        urgent:  false,
-        completed: false,
-        dueDate: 'Due date: June 23 2023 8:30',
-
-
-      },
-      {
-        id: uniqid(),
-        title: "studiare francese",
-        category: "study",
-        urgent:  true,
-        completed: false,
-        dueDate: 'Due date: June 23 2023 8:30',
-
-
-      },
-      {
-        id: uniqid(),
-        title: "studiare inglese",
-        category: "study",
-        urgent:  true,
-        completed: false,
-        dueDate: 'Due date: June 23 2023 8:30',
-
-
-      },
-      {
-        id: uniqid(),
-        title: "studiare fisica",
-        category: "study",
-        urgent:  false,
-        completed: false,
-        dueDate: 'Due date: June 23 2023 8:30',
-
-
-      },
+     
     ],
   },
   {
@@ -65,12 +17,11 @@ export const USERS = [
     fullname: "Jessica Moretti",
     email: "jessicamoretti@gmail.com",
     password: "jessica",
+    location: 'ascoli piceno',
+
     categories: [],
     articles: [],
 
-    projects: [
-      {id: uniqid(), title: 'Romanzo', tags: [], dueDate: '', description: '', subtasks: [], completed: false}
-    ],
     tasks: [
       {
         id: uniqid(),

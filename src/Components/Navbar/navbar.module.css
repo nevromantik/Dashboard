@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: start;
     align-items: center;
+  
 }
 
 .dashboardRoute, .inboxRoute, .todayRoute, .projectRoute{
@@ -33,9 +34,11 @@ display: flex;
 justify-content: start;
 align-items: center;
 flex-direction: column;
-margin-top: 21rem;
+margin-top: 16rem;
 font-size: 0.8rem;
-
+position: sticky;
+top: 0;
+z-index: 999;
 
 }
 .settings, .logout{
